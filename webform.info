@@ -4,9 +4,3 @@ description = Enables the creation of forms and questionnaires.
 core = 6.x
 package = Webform
 php = 5.1
-
-; Information added by Drupal 6 LTS vendors on 2016-10-19
-version = "6.x-3.24"
-core = "6.x"
-project = "webform"
-datestamp = "1476879310"
