@@ -96,7 +96,7 @@ class webform_exporter {
 class webform_exporter_delimited extends webform_exporter {
   var $delimiter;
 
-  function webform_exporter_delimited($options) {
+  function __construct($options) {
     $this->delimiter = isset($options['delimiter']) ? $options['delimiter'] : ',';
     // Convert tabs.
     if ($this->delimiter == '\t') {
@@ -156,9 +156,9 @@ class webform_exporter_delimited extends webform_exporter {
 class webform_exporter_excel extends webform_exporter_delimited {
   var $delimiter;
 
-  function webform_exporter_excel($options) {
+  function __construct($options) {
     $options['delimiter'] = '\t';
-    parent::webform_exporter_delimited($options);
+    parent::__construct($options);
   }
 
   function set_headers($filename) {
