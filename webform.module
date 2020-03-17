@@ -2172,7 +2172,7 @@ function _webform_client_form_validate($elements, &$form_state, $first_run = TRU
       // checkboxes, can return a valid value of '0'. Instead, check the
       // length if it's a string, and the item count if it's an array. For
       // radios, FALSE means that no value was submitted, so check that too.
-      if ($elements['#required'] && (!count($elements['#value']) || (is_string($elements['#value']) && strlen(trim($elements['#value'])) == 0) || $elements['#value'] === FALSE)) {
+      if ($elements['#required'] && ((is_array($elements['#value']) && count($elements['#value']) == 0) || (is_string($elements['#value']) && strlen(trim($elements['#value'])) == 0) || $elements['#value'] === FALSE)) {
         form_error($elements, t('!name field is required.', array('!name' => $elements['#title'])));
       }
 
